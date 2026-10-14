@@ -1,0 +1,1102 @@
+{
+  "schema": "anticloud.bench_engine/1",
+  "project": "MONAI",
+  "category": "MEDICAL_HEALTH",
+  "status": "BENCHMARKED",
+  "run_timestamp_utc": "2026-10-05T14:35:19Z",
+  "duration_seconds": 34.5,
+  "runner": "E:\\opencode-work\\tier_agents\\_work\\bench_engine.py + checks_part2.py",
+  "clone_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\MEDICAL_HEALTH\\MONAI\\UPSTREAM_CLONE",
+  "source_commit": "02a8ef3edd8dfb696e415f3c6ef83bfb1b8d5fbb",
+  "source_url": "https://github.com/Project-MONAI/MONAI",
+  "files_walked": 533,
+  "policy": {
+    "ai_llm_latency_checks": "EXCLUDED",
+    "model_downloads": "NONE",
+    "fabrication": "prohibited - every value measured from the local clone"
+  },
+  "totals": {
+    "checks": 17,
+    "passed": 17,
+    "failed": 0,
+    "failures": [],
+    "pass_rate_pct": 100.0
+  },
+  "checks": {
+    "01_lines_of_code": {
+      "metric": "lines_of_code",
+      "value": 164826,
+      "files": 533,
+      "source_files": 484,
+      "blank_lines": 24992,
+      "comment_lines": 11162,
+      "code_lines": 129156,
+      "comment_ratio": 0.0677,
+      "by_language": [
+        {
+          "language": "Python",
+          "files": 441,
+          "lines": 151615
+        },
+        {
+          "language": "CUDA",
+          "files": 10,
+          "lines": 5159
+        },
+        {
+          "language": "C++",
+          "files": 16,
+          "lines": 4713
+        },
+        {
+          "language": "C/C++ Header",
+          "files": 15,
+          "lines": 2510
+        },
+        {
+          "language": "Shell",
+          "files": 2,
+          "lines": 829
+        }
+      ],
+      "pass": true,
+      "threshold": ">1000 LOC and >10 files",
+      "evidence": "counted 164826 source lines across 484 files / 533 total"
+    },
+    "02_license_class": {
+      "metric": "license_class",
+      "value": "A",
+      "spdx_id": "Apache-2.0",
+      "detected_licenses": [
+        "Apache-2.0"
+      ],
+      "license_files": [
+        "LICENSE"
+      ],
+      "noncommercial_marker": false,
+      "can_relicense": true,
+      "can_vendor": true,
+      "can_push_as_ours": true,
+      "pass": true,
+      "threshold": "LICENSE file present with identifiable licence",
+      "evidence": "1 licence file(s); detected=['Apache-2.0']; class=A; noncommercial_marker=False"
+    },
+    "03_dependency_posture": {
+      "metric": "dependency_posture",
+      "value": 4,
+      "unique_dependencies": 4,
+      "ecosystems": {
+        "pypi": 4
+      },
+      "manifest_files": 1,
+      "exactly_pinned": 0,
+      "unpinned_count": 1,
+      "url_dependencies": [],
+      "coverage_ratio": 0.667,
+      "pass": true,
+      "threshold": "dependency manifests present, no unversioned URL deps",
+      "evidence": "4 parsed deps across 1 ecosystem(s); manifests=1; url_deps=0; exactly_pinned=0"
+    },
+    "04_sbom": {
+      "metric": "sbom",
+      "value": 4,
+      "spec": "CycloneDX 1.5",
+      "components": 4,
+      "serial": "urn:uuid:864c2372-4b2d-51db-ad0f-603dc9038d2f",
+      "path": "SBOM/MONAI.cdx.json",
+      "spec_valid": true,
+      "pass": true,
+      "threshold": "CycloneDX 1.5 with purl on every component",
+      "evidence": "serial=urn:uuid:864c2372-4b2d-51db-ad0f-603dc9038d2f; components=4; all have purl=True"
+    },
+    "05_git_health": {
+      "metric": "git_health",
+      "value": "19/7",
+      "head": "02a8ef3edd8dfb696e415f3c6ef83bfb1b8d5fbb",
+      "head_date": "2026-10-01T19:12:34Z",
+      "commit_count": "1",
+      "branches": 2,
+      "tags": 0,
+      "remote": "https://github.com/Project-MONAI/MONAI",
+      "is_shallow": true,
+      "ci_workflows": 15,
+      "checks": {
+        "has_commits": true,
+        "has_remote": true,
+        "has_license": true,
+        "has_ci": 15,
+        "has_tags": false,
+        "clean_tree": false,
+        "no_gitmodules_creds": true
+      },
+      "pass": 15,
+      "threshold": "commits + licence file + CI workflow present",
+      "evidence": "HEAD=02a8ef3edd8d date=2026-10-01T19:12:34Z commits=1 tags=0 ci=15 shallow=True checks=19/7"
+    },
+    "06_owasp_top_10": {
+      "metric": "owasp_top_10",
+      "value": 10,
+      "categories": 10,
+      "total_findings": 658,
+      "high": 57,
+      "medium": 2,
+      "unique_patterns": 9,
+      "categories_with_signals": 9,
+      "sample": [
+        {
+          "rule": "\\$\\(\\s*[a-z_]+\\s*\\)",
+          "severity": "high",
+          "file": "runtests.sh",
+          "line": 470,
+          "cwe": "CWE-78",
+          "snippet": "done <<< \"$(find \"$(pwd)/monai\" \"$(pwd)/tests\" -type f \\"
+        },
+        {
+          "rule": "\\$\\(\\s*[a-z_]+\\s*\\)",
+          "severity": "high",
+          "file": "runtests.sh",
+          "line": 470,
+          "cwe": "CWE-78",
+          "snippet": "done <<< \"$(find \"$(pwd)/monai\" \"$(pwd)/tests\" -type f \\"
+        },
+        {
+          "rule": "TODO|FIXME|XXX|HACK",
+          "severity": "low",
+          "file": "runtests.sh",
+          "line": 125,
+          "cwe": "CWE-",
+          "snippet": "# FIXME: https://github.com/Project-MONAI/MONAI/issues/4354"
+        },
+        {
+          "rule": "TODO|FIXME|XXX|HACK",
+          "severity": "low",
+          "file": "runtests.sh",
+          "line": 146,
+          "cwe": "CWE-",
+          "snippet": "REQ=$(mktemp --tmpdir XXX.txt)"
+        },
+        {
+          "rule": "TODO|FIXME|XXX|HACK",
+          "severity": "low",
+          "file": "runtests.sh",
+          "line": 739,
+          "cwe": "CWE-",
+          "snippet": "# TODO: temp skip test_perceptual_loss, revert after #8652 merged"
+        },
+        {
+          "rule": "TODO|FIXME|XXX|HACK",
+          "severity": "low",
+          "file": "runtests.sh",
+          "line": 740,
+          "cwe": "CWE-",
+          "snippet": "# TODO: temp skip test_auto3dseg_ensemble, revert after #8737 resolved"
+        },
+        {
+          "rule": "http://[^\\s\"\\']+",
+          "severity": "low",
+          "file": "runtests.sh",
+          "line": 7,
+          "cwe": "CWE-319",
+          "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        {
+          "rule": "http://[^\\s\"\\']+",
+          "severity": "low",
+          "file": "runtests.sh",
+          "line": 466,
+          "cwe": "CWE-319",
+          "snippet": "if ! grep \"http://www.apache.org/licenses/LICENSE-2.0\" \"$fname\" > /dev/null; then"
+        },
+        {
+          "rule": "TODO|FIXME|XXX|HACK",
+          "severity": "low",
+          "file": "setup.py",
+          "line": 26,
+          "cwe": "CWE-",
+          "snippet": "# TODO: debug mode -g -O0, compile test cases"
+        },
+        {
+          "rule": "http://[^\\s\"\\']+",
+          "severity": "low",
+          "file": "setup.py",
+          "line": 5,
+          "cwe": "CWE-319",
+          "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+        },
+        {
+          "rule": "TODO|FIXME|XXX|HACK",
+          "severity": "low",
+          "file": "monai/__init__.py",
+          "line": 54,
+          "cwe": "CWE-",
+          "snippet": "# TODO: remove this workaround after upstream fixed the warning"
+        },
+        {
+          "rule": "http://[^\\s\"\\']+",
+          "severity": "low",
+          "file": "monai/__init__.py",
+          "line": 5,
+          "cwe": "CWE-319",
+          "snippet": "#     http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "severity_breakdown": {
+        "high": 57,
+        "medium": 2,
+        "low": 599
+      },
+      "pass": true,
+      "threshold": "scan executes and flags >=4 of 10 categories",
+      "evidence": "658 findings (57 high/2 medium) across 9/10 categories; patterns=9"
+    },
+    "07_owasp_llm_top_10": {
+      "metric": "owasp_llm_top_10",
+      "value": 10,
+      "categories": 10,
+      "static_only": true,
+      "model_calls": 0,
+      "latency_checks": 0,
+      "total_findings": 10,
+      "unique_patterns": 0,
+      "categories_with_signals": 0,
+      "llm_dependencies": [
+        "torch"
+      ],
+      "sample": [
+        {
+          "rule": "assert.{0,30}(ground.?truth|verif)",
+          "severity": "low",
+          "file": "monai/losses/cldice.py",
+          "line": 227,
+          "cwe": "CWE-",
+          "snippet": "raise AssertionError(f\"ground truth has different shape ({target.shape}) from input ({input.shape})\")"
+        },
+        {
+          "rule": "assert.{0,30}(ground.?truth|verif)",
+          "severity": "low",
+          "file": "monai/losses/dice.py",
+          "line": 195,
+          "cwe": "CWE-",
+          "snippet": "raise AssertionError(f\"ground truth has different shape ({target.shape}) from input ({input.shape})\")"
+        },
+        {
+          "rule": "assert.{0,30}(ground.?truth|verif)",
+          "severity": "low",
+          "file": "monai/losses/dice.py",
+          "line": 446,
+          "cwe": "CWE-",
+          "snippet": "raise AssertionError(f\"ground truth has differing shape ({target.shape}) from input ({input.shape})\")"
+        },
+        {
+          "rule": "assert.{0,30}(ground.?truth|verif)",
+          "severity": "low",
+          "file": "monai/losses/hausdorff_loss.py",
+          "line": 179,
+          "cwe": "CWE-",
+          "snippet": "raise AssertionError(f\"ground truth has different shape ({target.shape}) from input ({input.shape})\")"
+        },
+        {
+          "rule": "assert.{0,30}(ground.?truth|verif)",
+          "severity": "low",
+          "file": "monai/losses/mcc_loss.py",
+          "line": 157,
+          "cwe": "CWE-",
+          "snippet": "raise AssertionError(f\"ground truth has differing shape ({target.shape}) from input ({input.shape})\")"
+        },
+        {
+          "rule": "assert.{0,30}(ground.?truth|verif)",
+          "severity": "low",
+          "file": "monai/losses/tversky.py",
+          "line": 159,
+          "cwe": "CWE-",
+          "snippet": "raise AssertionError(f\"ground truth has differing shape ({target.shape}) from input ({input.shape})\")"
+        },
+        {
+          "rule": "from_pretrained\\(|hf_hub_download\\(",
+          "severity": "medium",
+          "file": "monai/networks/nets/resnet.py",
+          "line": 653,
+          "cwe": "CWE-494",
+          "snippet": "pretrained_path = hf_hub_download("
+        },
+        {
+          "rule": "from_pretrained\\(|hf_hub_download\\(",
+          "severity": "medium",
+          "file": "monai/networks/nets/resnet.py",
+          "line": 661,
+          "cwe": "CWE-494",
+          "snippet": "pretrained_path = hf_hub_download("
+        },
+        {
+          "rule": "from_pretrained\\(|hf_hub_download\\(",
+          "severity": "medium",
+          "file": "monai/networks/nets/transchex.py",
+          "line": 55,
+          "cwe": "CWE-494",
+          "snippet": "def from_pretrained("
+        },
+        {
+          "rule": "from_pretrained\\(|hf_hub_download\\(",
+          "severity": "medium",
+          "file": "monai/networks/nets/transchex.py",
+          "line": 363,
+          "cwe": "CWE-494",
+          "snippet": "self.multimodal = MultiModal.from_pretrained("
+        }
+      ],
+      "pass": true,
+      "threshold": "static LLM-surface scan executes (no model inference)",
+      "evidence": "10 static findings over 0 LLM categories; 1 LLM-related manifest deps; 0 model calls performed"
+    },
+    "08_soc1": {
+      "framework": "SOC 1 (Trust Services Criteria)",
+      "value": "7/12",
+      "coverage_ratio": 0.583,
+      "controls_implemented": [
+        "A1.2",
+        "CC1.1",
+        "CC2.1",
+        "CC4.1",
+        "CC5.2",
+        "CC7.2",
+        "CC8.1"
+      ],
+      "control_families": [
+        "Availability",
+        "Change Management",
+        "Communication",
+        "Control Activities",
+        "Control Environment",
+        "Monitoring",
+        "System Operations"
+      ],
+      "expected_families": [
+        "Availability",
+        "Change Management",
+        "Communication",
+        "Confidentiality",
+        "Control Activities",
+        "Control Environment",
+        "Logical Access",
+        "Monitoring",
+        "Processing Integrity",
+        "Risk Assessment",
+        "Risk Mitigation",
+        "System Operations"
+      ],
+      "missing_families": [
+        "Confidentiality",
+        "Logical Access",
+        "Processing Integrity",
+        "Risk Assessment",
+        "Risk Mitigation"
+      ],
+      "control_mapping": {
+        "A1.2": "Availability",
+        "CC1.1": "Control Environment",
+        "CC2.1": "Communication",
+        "CC4.1": "Monitoring",
+        "CC5.2": "Control Activities",
+        "CC7.2": "System Operations",
+        "CC8.1": "Change Management"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "CI=15, licence=True, files=533 | A1.2, CC1.1, CC2.1, CC4.1, CC5.2, CC7.2, CC8.1"
+    },
+    "09_soc2_type_ii": {
+      "framework": "SOC 2 Type II",
+      "value": "9/12",
+      "coverage_ratio": 0.75,
+      "controls_implemented": [
+        "A1",
+        "C1",
+        "CC1",
+        "CC2",
+        "CC4",
+        "CC5",
+        "CC6",
+        "CC7",
+        "CC8"
+      ],
+      "control_families": [
+        "Availability",
+        "Change Management",
+        "Communication",
+        "Confidentiality",
+        "Control Activities",
+        "Control Environment",
+        "Logical Access",
+        "Monitoring",
+        "System Operations"
+      ],
+      "expected_families": [
+        "Availability",
+        "Change Management",
+        "Communication",
+        "Confidentiality",
+        "Control Activities",
+        "Control Environment",
+        "Logical Access",
+        "Monitoring",
+        "Processing Integrity",
+        "Risk Assessment",
+        "Risk Mitigation",
+        "System Operations"
+      ],
+      "missing_families": [
+        "Processing Integrity",
+        "Risk Assessment",
+        "Risk Mitigation"
+      ],
+      "control_mapping": {
+        "A1": "Availability",
+        "C1": "Confidentiality",
+        "CC1": "Control Environment",
+        "CC2": "Communication",
+        "CC4": "Monitoring",
+        "CC5": "Control Activities",
+        "CC6": "Logical Access",
+        "CC7": "System Operations",
+        "CC8": "Change Management"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "Type II needs sustained evidence; artefacts found for 9 criteria | A1, C1, CC1, CC2, CC4, CC5, CC6, CC7, CC8"
+    },
+    "10_nist_ai_rmf": {
+      "framework": "NIST AI RMF 1.0",
+      "value": "6/9",
+      "coverage_ratio": 0.667,
+      "controls_implemented": [
+        "DOC",
+        "GOV",
+        "GOVERN",
+        "MEASURE",
+        "SEC",
+        "TRACK"
+      ],
+      "control_families": [
+        "Documentation",
+        "Govern",
+        "Governance",
+        "Measure",
+        "Safety/Security",
+        "Tracking"
+      ],
+      "expected_families": [
+        "Documentation",
+        "Govern",
+        "Governance",
+        "Manage",
+        "Map",
+        "Measure",
+        "Safety/Security",
+        "Testing/Evaluation/Verification/Validation",
+        "Tracking"
+      ],
+      "missing_families": [
+        "Manage",
+        "Map",
+        "Testing/Evaluation/Verification/Validation"
+      ],
+      "control_mapping": {
+        "DOC": "Documentation",
+        "GOV": "Governance",
+        "GOVERN": "Govern",
+        "MEASURE": "Measure",
+        "SEC": "Safety/Security",
+        "TRACK": "Tracking"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "mapped from 533 observed artefacts (no runtime inference executed) | DOC, GOV, GOVERN, MEASURE, SEC, TRACK"
+    },
+    "11_nist_sp800_53": {
+      "framework": "NIST SP 800-53 Rev5",
+      "value": "16/28",
+      "coverage_ratio": 0.571,
+      "controls_implemented": [
+        "AC",
+        "AC-6",
+        "AT",
+        "CA-7",
+        "CM",
+        "CM-6",
+        "IR",
+        "MA",
+        "PL",
+        "PM",
+        "PS",
+        "RA",
+        "SA-10",
+        "SA-11",
+        "SI-7",
+        "SR"
+      ],
+      "control_families": [
+        "Access Control",
+        "Awareness and Training",
+        "Configuration Mgmt",
+        "Configuration Settings",
+        "Continuous Monitoring",
+        "Dev Configuration Mgmt",
+        "Dev Security Testing",
+        "Incident Response",
+        "Least Privilege",
+        "Maintenance",
+        "Personnel Security",
+        "Planning",
+        "Program Mgmt",
+        "Risk Assessment",
+        "Software/Firmware Integrity",
+        "Supply Chain Risk Mgmt"
+      ],
+      "expected_families": [
+        "Access Control",
+        "Assessment and Authorization",
+        "Audit Record Generation",
+        "Audit and Accountability",
+        "Auth (Org)",
+        "Awareness and Training",
+        "Configuration Mgmt",
+        "Configuration Settings",
+        "Contingency Planning",
+        "Continuous Monitoring",
+        "Dev Configuration Mgmt",
+        "Dev Security Testing",
+        "Identification and Auth",
+        "Incident Response",
+        "Least Privilege",
+        "Maintenance",
+        "Media Protection",
+        "Personnel Security",
+        "Physical and Environmental",
+        "Planning",
+        "Program Mgmt",
+        "Risk Assessment",
+        "Software/Firmware Integrity",
+        "Supply Chain Risk Mgmt",
+        "System and Communications Protection",
+        "System and Information Integrity",
+        "System and Services Acquisition",
+        "Vuln Monitoring"
+      ],
+      "missing_families": [
+        "Assessment and Authorization",
+        "Audit Record Generation",
+        "Audit and Accountability",
+        "Auth (Org)",
+        "Contingency Planning",
+        "Identification and Auth",
+        "Media Protection",
+        "Physical and Environmental",
+        "System and Communications Protection",
+        "System and Information Integrity",
+        "System and Services Acquisition",
+        "Vuln Monitoring"
+      ],
+      "control_mapping": {
+        "AC": "Access Control",
+        "AC-6": "Least Privilege",
+        "AT": "Awareness and Training",
+        "CA-7": "Continuous Monitoring",
+        "CM": "Configuration Mgmt",
+        "CM-6": "Configuration Settings",
+        "IR": "Incident Response",
+        "MA": "Maintenance",
+        "PL": "Planning",
+        "PM": "Program Mgmt",
+        "PS": "Personnel Security",
+        "RA": "Risk Assessment",
+        "SA-10": "Dev Configuration Mgmt",
+        "SA-11": "Dev Security Testing",
+        "SI-7": "Software/Firmware Integrity",
+        "SR": "Supply Chain Risk Mgmt"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "16 controls evidenced from tree + CI metadata | AC, AC-6, AT, CA-7, CM, CM-6, IR, MA, PL, PM, PS, RA, SA-10, SA-11"
+    },
+    "12_nist_csf_2_0": {
+      "framework": "NIST CSF 2.0",
+      "value": "13/14",
+      "coverage_ratio": 0.929,
+      "controls_implemented": [
+        "DE.AE",
+        "DE.CM",
+        "GV.OC",
+        "GV.RM",
+        "GV.SC",
+        "ID.AM",
+        "ID.RA",
+        "ID.SC",
+        "PR.AC",
+        "PR.IR",
+        "PR.PS",
+        "RC.RP",
+        "RS.MA"
+      ],
+      "control_families": [
+        "Adverse Events",
+        "Asset Management",
+        "Continuous Monitoring",
+        "Identity and Access",
+        "Incident Recovery",
+        "Organizational Context",
+        "Platform Security",
+        "Risk Assessment",
+        "Risk Management",
+        "Risk Mitigation",
+        "Supply Chain",
+        "Supply Chain Risk",
+        "Technology Resilience"
+      ],
+      "expected_families": [
+        "Adverse Events",
+        "Asset Management",
+        "Continuous Monitoring",
+        "Data Security",
+        "Identity and Access",
+        "Incident Recovery",
+        "Organizational Context",
+        "Platform Security",
+        "Risk Assessment",
+        "Risk Management",
+        "Risk Mitigation",
+        "Supply Chain",
+        "Supply Chain Risk",
+        "Technology Resilience"
+      ],
+      "missing_families": [
+        "Data Security"
+      ],
+      "control_mapping": {
+        "DE.AE": "Adverse Events",
+        "DE.CM": "Continuous Monitoring",
+        "GV.OC": "Organizational Context",
+        "GV.RM": "Risk Management",
+        "GV.SC": "Supply Chain",
+        "ID.AM": "Asset Management",
+        "ID.RA": "Risk Assessment",
+        "ID.SC": "Supply Chain Risk",
+        "PR.AC": "Identity and Access",
+        "PR.IR": "Technology Resilience",
+        "PR.PS": "Platform Security",
+        "RC.RP": "Incident Recovery",
+        "RS.MA": "Risk Mitigation"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "13 functions evidenced | DE.AE, DE.CM, GV.OC, GV.RM, GV.SC, ID.AM, ID.RA, ID.SC, PR.AC, PR.IR, PR.PS, RC.RP, RS.MA"
+    },
+    "13_fedramp_rev5": {
+      "framework": "FedRAMP Rev5 (800-53 Moderate)",
+      "value": "19/26",
+      "coverage_ratio": 0.731,
+      "controls_implemented": [
+        "AC",
+        "AC-6",
+        "AU-2",
+        "CA-7",
+        "CM",
+        "CM-6",
+        "IA",
+        "IR",
+        "IR-4",
+        "MA",
+        "PL",
+        "PS",
+        "RA",
+        "RA-5",
+        "SA",
+        "SA-11",
+        "SI",
+        "SI-4",
+        "SR"
+      ],
+      "control_families": [
+        "Access Control",
+        "Config Mgmt",
+        "Config Settings",
+        "Continuous Monitoring",
+        "Dev Security Testing",
+        "Event Logging",
+        "Identification",
+        "Incident Handling",
+        "Incident Response",
+        "Least Privilege",
+        "Maintenance",
+        "Personnel",
+        "Planning",
+        "Risk Assessment",
+        "Services Acquisition",
+        "Supply Chain",
+        "System Monitoring",
+        "System/Info Integrity",
+        "Vuln Scanning"
+      ],
+      "expected_families": [
+        "Access Control",
+        "Assessment",
+        "Audit",
+        "Config Mgmt",
+        "Config Settings",
+        "Contingency Plan",
+        "Continuous Monitoring",
+        "Dev Security Testing",
+        "Event Logging",
+        "Identification",
+        "Identification/Auth",
+        "Incident Handling",
+        "Incident Response",
+        "Least Privilege",
+        "Maintenance",
+        "Media Protection",
+        "Personnel",
+        "Physical",
+        "Planning",
+        "Risk Assessment",
+        "Services Acquisition",
+        "Supply Chain",
+        "System Monitoring",
+        "System/Comms Protection",
+        "System/Info Integrity",
+        "Vuln Scanning"
+      ],
+      "missing_families": [
+        "Assessment",
+        "Audit",
+        "Contingency Plan",
+        "Identification/Auth",
+        "Media Protection",
+        "Physical",
+        "System/Comms Protection"
+      ],
+      "control_mapping": {
+        "AC": "Access Control",
+        "AC-6": "Least Privilege",
+        "AU-2": "Event Logging",
+        "CA-7": "Continuous Monitoring",
+        "CM": "Config Mgmt",
+        "CM-6": "Config Settings",
+        "IA": "Identification",
+        "IR": "Incident Response",
+        "IR-4": "Incident Handling",
+        "MA": "Maintenance",
+        "PL": "Planning",
+        "PS": "Personnel",
+        "RA": "Risk Assessment",
+        "RA-5": "Vuln Scanning",
+        "SA": "Services Acquisition",
+        "SA-11": "Dev Security Testing",
+        "SI": "System/Info Integrity",
+        "SI-4": "System Monitoring",
+        "SR": "Supply Chain"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "19 FedRAMP controls evidenced; FedRAMP authorization itself is an external audit action, not a code property | AC, AC-6, AU-2, CA-7, CM, CM-6, IA, IR, IR-4, MA, PL, PS, RA, RA-5"
+    },
+    "14_pci_dss_4_0": {
+      "framework": "PCI DSS v4.0",
+      "value": "7/11",
+      "coverage_ratio": 0.636,
+      "controls_implemented": [
+        "10",
+        "11",
+        "12",
+        "2",
+        "6",
+        "7",
+        "8"
+      ],
+      "control_families": [
+        "Identify Users",
+        "Log and Monitor",
+        "Policies",
+        "Restrict Access by Need to Know",
+        "Secure Configurations",
+        "Secure Development",
+        "Test Security"
+      ],
+      "expected_families": [
+        "Encrypt Transmission",
+        "Identify Users",
+        "Log and Monitor",
+        "Malware Protection",
+        "Network Security Controls",
+        "Policies",
+        "Protect Stored Data",
+        "Restrict Access by Need to Know",
+        "Secure Configurations",
+        "Secure Development",
+        "Test Security"
+      ],
+      "missing_families": [
+        "Encrypt Transmission",
+        "Malware Protection",
+        "Network Security Controls",
+        "Protect Stored Data"
+      ],
+      "control_mapping": {
+        "10": "Log and Monitor",
+        "11": "Test Security",
+        "12": "Policies",
+        "2": "Secure Configurations",
+        "6": "Secure Development",
+        "7": "Restrict Access by Need to Know",
+        "8": "Identify Users"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "7 PCI requirements evidenced | 10, 11, 12, 2, 6, 7, 8"
+    },
+    "15_iso27001_2022": {
+      "framework": "ISO/IEC 27001:2022 Annex A",
+      "value": "10/16",
+      "coverage_ratio": 0.625,
+      "controls_implemented": [
+        "10.1",
+        "12.1",
+        "14.2",
+        "14.4",
+        "15.1",
+        "16.1",
+        "5.1",
+        "5.2",
+        "6.1",
+        "8.2"
+      ],
+      "control_families": [
+        "Change Mgmt",
+        "Incident Mgmt",
+        "Incident Response Planning",
+        "Information Security Policies",
+        "Monitoring",
+        "Policies",
+        "Privileged Access",
+        "Roles",
+        "Secure Development",
+        "Supplier Relationships"
+      ],
+      "expected_families": [
+        "Business Continuity",
+        "Change Mgmt",
+        "Compliance",
+        "Config Mgmt",
+        "Incident Mgmt",
+        "Incident Response Planning",
+        "Information Security Policies",
+        "Information Transfer",
+        "Monitoring",
+        "Policies",
+        "Privileged Access",
+        "Redundancy",
+        "Roles",
+        "Secure Development",
+        "Supplier Relationships",
+        "User Identity"
+      ],
+      "missing_families": [
+        "Business Continuity",
+        "Compliance",
+        "Config Mgmt",
+        "Information Transfer",
+        "Redundancy",
+        "User Identity"
+      ],
+      "control_mapping": {
+        "10.1": "Monitoring",
+        "12.1": "Incident Mgmt",
+        "14.2": "Secure Development",
+        "14.4": "Change Mgmt",
+        "15.1": "Supplier Relationships",
+        "16.1": "Incident Response Planning",
+        "5.1": "Policies",
+        "5.2": "Roles",
+        "6.1": "Information Security Policies",
+        "8.2": "Privileged Access"
+      },
+      "pass": true,
+      "threshold": ">=50% of framework control families evidenced",
+      "evidence": "10 Annex A controls evidenced | 10.1, 12.1, 14.2, 14.4, 15.1, 16.1, 5.1, 5.2, 6.1, 8.2"
+    },
+    "16_mitre_attack": {
+      "metric": "mitre_attack",
+      "value": 8,
+      "framework": "MITRE ATT&CK",
+      "techniques_evaluated": 46,
+      "techniques_with_signals": 8,
+      "coverage_ratio": 0.1739,
+      "signals": {
+        "T1053": {
+          "technique": "Scheduled Task/Job",
+          "signals": [
+            "CI automation"
+          ],
+          "evidence": [
+            "CI/CD pipeline files present"
+          ]
+        },
+        "T1611": {
+          "technique": "T1611",
+          "signals": [
+            "Container escape surface"
+          ],
+          "evidence": [
+            "Dockerfile present"
+          ]
+        },
+        "T1620": {
+          "technique": "Reflective Code Loading",
+          "signals": [
+            "Test harness loading"
+          ],
+          "evidence": [
+            "test config files"
+          ]
+        },
+        "T1059": {
+          "technique": "Command and Scripting Interpreter",
+          "signals": [
+            "eval() interpreter use",
+            "command execution"
+          ],
+          "evidence": [
+            "pattern 'eval\\\\s*\\\\(' matched in source corpus",
+            "pattern 'subprocess|os\\\\.system|popen' matched in source corpus"
+          ]
+        },
+        "T1140": {
+          "technique": "Deobfuscate/Decode Files",
+          "signals": [
+            "deserialisation of untrusted data"
+          ],
+          "evidence": [
+            "pattern 'pickle\\\\.load|marshal\\\\.load' matched in source corpus"
+          ]
+        },
+        "T1095": {
+          "technique": "Non-Application Layer Protocol",
+          "signals": [
+            "raw socket connectivity"
+          ],
+          "evidence": [
+            "pattern 'socket\\\\.connect|connect\\\\s*\\\\(' matched in source corpus"
+          ]
+        },
+        "T1105": {
+          "technique": "Ingress Tool Transfer",
+          "signals": [
+            "tool/artifact ingress"
+          ],
+          "evidence": [
+            "pattern 'urlopen|requests\\\\.get' matched in source corpus"
+          ]
+        },
+        "T1562": {
+          "technique": "Impair Defenses",
+          "signals": [
+            "security-critical path"
+          ],
+          "evidence": [
+            "pattern 'CRITICAL|severity[\"\\\\\\']?\\\\s*[:=]\\\\s*[\"\\\\\\']high' matched in source corpus"
+          ]
+        }
+      },
+      "pass": true,
+      "threshold": ">=3 ATT&CK techniques evidenced by static signal",
+      "evidence": "8/46 techniques matched static corpus signals"
+    },
+    "17_ml_trl": {
+      "metric": "ml_trl",
+      "value": 9,
+      "framework": "ML-TRL",
+      "levels_reached": [
+        "RL",
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T7",
+        "T8",
+        "T9"
+      ],
+      "total_levels": 10,
+      "trl_equivalent": 8,
+      "coverage_ratio": 0.9,
+      "pass": true,
+      "threshold": ">=4 of 10 TRL/ML-TRL levels evidenced",
+      "evidence": "reached ['RL', 'T1', 'T2', 'T3', 'T4', 'T5', 'T7', 'T8', 'T9'] -> TRL-equivalent 8/9 (no model training executed)"
+    }
+  },
+  "sbom_cyclonedx_1_5": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:864c2372-4b2d-51db-ad0f-603dc9038d2f",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T14:34:45Z",
+      "component": {
+        "type": "application",
+        "name": "MONAI",
+        "version": "02a8ef3edd8d",
+        "bom-ref": "pkg:generic/anticloud/MONAI@02a8ef3edd8d",
+        "purl": "pkg:generic/anticloud/MONAI@02a8ef3edd8d",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "02a8ef3edd8dfb696e415f3c6ef83bfb1b8d5fbb"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/Project-MONAI/MONAI"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "torch",
+        "version": ">=2.8.0",
+        "purl": "pkg:pypi/torch@2.8.0",
+        "bom-ref": "pypi/torch@>=2.8.0"
+      },
+      {
+        "type": "library",
+        "name": "numpy",
+        "version": ">=1.24",
+        "purl": "pkg:pypi/numpy@1.24",
+        "bom-ref": "pypi/numpy@>=1.24"
+      },
+      {
+        "type": "library",
+        "name": "BUILD_MONAI_CPP",
+        "version": "={BUILD_CPP}, BUILD_MONAI_CUDA={BUILD_CUDA}, TORCH_VERSION={TORCH_VERSION}.",
+        "purl": "pkg:pypi/build-monai-cpp@{BUILD_CPP}, BUILD_MONAI_CUDA={BUILD_CUDA}, TORCH_VERSION={TORCH_VERSION}.",
+        "bom-ref": "pypi/BUILD_MONAI_CPP@={BUILD_CPP}, BUILD_MONAI_CUDA={BUILD_CUDA}, TORCH_VERSION={TORCH_VERSION}."
+      },
+      {
+        "type": "library",
+        "name": "-fopenmp",
+        "version": "=libiomp5",
+        "purl": "pkg:pypi/-fopenmp@libiomp5",
+        "bom-ref": "pypi/-fopenmp@=libiomp5"
+      }
+    ]
+  }
+}
