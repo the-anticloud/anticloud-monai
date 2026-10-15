@@ -1,0 +1,67 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:cb6971fc-f348-50e1-a22a-747f17511825",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-05T17:11:39Z",
+    "component": {
+      "type": "application",
+      "name": "MONAI",
+      "version": "4e8918470f78",
+      "bom-ref": "pkg:generic/anticloud/MONAI@4e8918470f78",
+      "purl": "pkg:generic/anticloud/MONAI@4e8918470f78",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "4e8918470f78d89bf1ee3e2bbaceec173c0ff800"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/Project-MONAI/MONAI"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "torch",
+      "version": ">=2.8.0",
+      "purl": "pkg:pypi/torch@2.8.0",
+      "bom-ref": "pypi/torch@>=2.8.0"
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": ">=1.24",
+      "purl": "pkg:pypi/numpy@1.24",
+      "bom-ref": "pypi/numpy@>=1.24"
+    },
+    {
+      "type": "library",
+      "name": "BUILD_MONAI_CPP",
+      "version": "={BUILD_CPP}, BUILD_MONAI_CUDA={BUILD_CUDA}, TORCH_VERSION={TORCH_VERSION}.",
+      "purl": "pkg:pypi/build-monai-cpp@{BUILD_CPP}, BUILD_MONAI_CUDA={BUILD_CUDA}, TORCH_VERSION={TORCH_VERSION}.",
+      "bom-ref": "pypi/BUILD_MONAI_CPP@={BUILD_CPP}, BUILD_MONAI_CUDA={BUILD_CUDA}, TORCH_VERSION={TORCH_VERSION}."
+    },
+    {
+      "type": "library",
+      "name": "-fopenmp",
+      "version": "=libiomp5",
+      "purl": "pkg:pypi/-fopenmp@libiomp5",
+      "bom-ref": "pypi/-fopenmp@=libiomp5"
+    }
+  ]
+}
